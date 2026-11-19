@@ -3,23 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Trophy Guide — GTA VI 55 Trophies, Tracker &amp; Platinum Roadmap</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: checklist saved in your browser, filters, spoiler mode, missable flags, and a platinum roadmap.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff2e88'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial,sans-serif' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3EL%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+  <h1>Leonida Trophy Guide</h1>
+  <p class="subtitle">Every trophy, its official name, description and grade, a guide in our own words with sources, and a checklist that remembers your progress — all offline, all in your browser.</p>
+  <div class="facts" id="facts"></div>
+  <div class="progress-wrap">
+    <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <p class="progress-note" id="gradeBreakdown"></p>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<main>
+  <section class="panel" id="roadmapPanel" aria-labelledby="roadmapHeading">
+    <h2 id="roadmapHeading">Roadmap to the platinum</h2>
+    <p class="panel-intro">PowerPyx rates this set 4 out of 10 and about 200 hours, with a single playthrough and no difficulty settings. There is no mission replay, but free roam continues after the story, so almost everything can be finished after the credits.</p>
+    <div id="roadmap"></div>
+    <aside class="warning" id="missableWarning">
+      <strong>One trophy can be missed.</strong>
+      <span id="missableWarningText"></span>
+    </aside>
+  </section>
+
+  <section class="panel controls" aria-label="Tracker controls">
+    <div class="control-row">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+      <label class="check-label"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+      <label class="check-label"><input id="earnedOnlyToggle" type="checkbox"> Earned only</label>
+    </div>
+    <div class="control-row" id="kindFilters" role="group" aria-label="Filter by kind"></div>
+    <div class="control-row">
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sortOrder">
+          <option value="list">Trophy list order</option>
+          <option value="grade">Grade, then list order</option>
+          <option value="roadmap">Roadmap order</option>
+        </select>
+      </label>
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-label">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button">Reset all</button>
+    </div>
+    <p class="hint" id="filterHint"></p>
+  </section>
+
+  <section aria-labelledby="listHeading">
+    <h2 id="listHeading" class="sr-only">Trophy checklist</h2>
+    <p class="count-line" id="countLine"></p>
+    <div id="trophyList" class="trophy-list"></div>
+    <p class="empty-note" id="emptyNote" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="sourcesHeading">
+    <h2 id="sourcesHeading">Where the facts come from</h2>
+    <p>Names, descriptions and grades are the official ones as published on PlayStation, mirrored by PSNProfiles and Exophase and reported by Push Square on 18 Nov 2026. The method notes paraphrase the guides below and never copy their text; where no guide has pinned a trigger down yet, the guide says so. Each trophy lists its own sources beside its guide.</p>
+    <ul class="source-list">
+      <li><a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</a> — roadmap, difficulty 4/10, about 200 hours, the one potentially missable trophy, 100% completion thresholds.</li>
+      <li><a href="https://gta-zone.com/news/gta-6-trophies-achievements/">GTA Zone — GTA 6 Trophy List</a> — per-trophy tips, chapter mapping, counts (42 shooting ranges, 14 drone race spots, 18 meditation spots, 39 gang operations).</li>
+      <li>PSNProfiles — GTA VI trophy list — the official names, descriptions, grades and tracked counts.</li>
+      <li>Exophase, via Push Square's report of the list — cross-check that the 55 names, descriptions and grades agree.</li>
+      <li><a href="https://cryptogames.gg/gta-6-100-completion-checklist/">CryptoGames — GTA 6 100% completion checklist</a> — what the checklist asks for and what is missable on it.</li>
+    </ul>
+    <p class="fineprint">An unofficial fan guide. Grand Theft Auto, GTA and Rockstar Games belong to their owners; no official artwork, logos or game images are used here, and the look is our own. Guide text is written for this entry; source guides are cited, never copied.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide — an offline, open-source guide. Progress lives only in your browser (localStorage) unless you export it.</p>
+</footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>

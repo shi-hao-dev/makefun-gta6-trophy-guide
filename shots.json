@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-guide.jpg","note":"Cover: hero, progress, roadmap start and the first trophies","path":"/","viewport":{"height":800,"width":1280}},{"file":"2-trophy-guide.jpg","note":"The missable trophy's guide open, with its sources","path":"/#trophy-28","viewport":{"height":800,"width":1280}},{"file":"3-roadmap.jpg","note":"Roadmap to the platinum and the missable warning","path":"/#roadmapPanel","viewport":{"height":800,"width":1280}},{"file":"4-spoiler.jpg","note":"Spoiler hiding on: story trophies masked until earned, with some earned","path":"/","viewport":{"height":800,"width":1280}}]
