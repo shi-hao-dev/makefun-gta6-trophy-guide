@@ -49,3 +49,4 @@ come from".
 Built for make.fun's "Build the best GTA 6 trophy guide" bounty ($250 in
 USDC). Try make.fun yourself: https://make.fun/r/ssmh6x4k (referral code
 `ssmh6x4k`).
+<!-- resubmit: README re-authored under a new recording -->
